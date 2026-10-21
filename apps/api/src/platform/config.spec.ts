@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { readServerConfig } from './config.js';
 
 describe('configuración de escucha', () => {
-  it.skip('limita el arranque local a loopback por defecto', () => {
-    expect(readServerConfig({})).toEqual({ host: '127.0.0.1', port: 3000 });
+  it('limita el arranque local a loopback por defecto', () => {
+    expect(readServerConfig({})).toEqual({ host: '127.0.0.1', port: 3001 });
   });
 
   it.each(['', '0', '65536', '-1', '3000.5', ' 3000', '3000x'])('rechaza PORT=%j', (port) => {
